@@ -63,7 +63,6 @@ void enlarge(HashMap * map) {
     map->capacity *= 2;
     map->buckets = (Pair **) calloc(map->capacity, sizeof(Pair *));
     if (map->buckets == NULL) {
-        // Si falla la asignación, restauramos
         map->buckets = old_buckets;
         map->capacity = old_capacity;
         return;
